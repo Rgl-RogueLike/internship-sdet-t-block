@@ -7,9 +7,9 @@
 2. Папка с именем `test1` отсутствует.
 
 ## Шаги воспроизведения
-1. Ввести в поле `path` значение `test1`.
-2. Нажать кнопку **«Попробовать!»**.
-3. Проверить HTTP-код ответа.
+1. Отправить PUT-запрос на эндпоинт `https://cloud-api.yandex.net/v1/disk/resources` с параметром `path = test1` и заголовками: `Authorization: OAuth <token>, Content-Type: application/json`.
+2. Проверить HTTP-код ответа.
+3. Проверить JSON-схему ответа.
 
 ## Фактический результат
 Получен HTTP-код `201`.
@@ -20,11 +20,9 @@
 Папка создана по указанному пути.
 
 ## Окружение
-- Браузер: Mozilla Firefox 152.0.5
 - ОС: Windows 11
 - API: Яндекс Диск REST API
 - Endpoint: `PUT https://cloud-api.yandex.net/v1/disk/resources`
-- Инструмент: Swagger Яндекс.API
 
 ## Priority
 Medium

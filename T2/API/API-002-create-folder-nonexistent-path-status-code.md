@@ -7,10 +7,9 @@
 2. Родительская папка `test2` отсутствует.
 
 ## Шаги воспроизведения
-1. Убедиться, что папка `test2` отсутствует.
-2. Ввести в поле `path` значение `test2/test21`.
-3. Нажать кнопку **«Попробовать!»**.
-4. Проверить HTTP-код ответа.
+1. Отправить PUT-запрос на эндпоинт `https://cloud-api.yandex.net/v1/disk/resources` с параметром `path = test2/test21` (где `test2` не существует) и заголовками: `Authorization: OAuth <token>, Content-Type: application/json`.
+2. Проверить HTTP-код ответа.
+3. Проверить JSON-схему ответа.
 
 ## Фактический результат
 Получен HTTP-код `409`.
@@ -32,11 +31,9 @@
 Папка не создана.
 
 ## Окружение
-- Браузер: Mozilla Firefox 152.0.5
 - ОС: Windows 11
 - API: Яндекс Диск REST API
 - Endpoint: `PUT https://cloud-api.yandex.net/v1/disk/resources`
-- Инструмент: Swagger Яндекс.API
 
 ## Priority
 Medium

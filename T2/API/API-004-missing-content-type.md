@@ -4,14 +4,12 @@
 
 ## Предусловия
 1. Получен валидный OAuth-токен.
-2. Папка `test_postman2` отсутствует.
+2. Папка `test4` отсутствует.
 
 ## Шаги воспроизведения
-1. Открыть Postman.
-2. Создать PUT-запрос `https://cloud-api.yandex.net/v1/disk/resources?path=test_postman2`.
-3. Во вкладке Headers передать только `Authorization: OAuth <токен>`.
-4. Убедиться, что заголовок `Content-Type` отсутствует.
-5. Отправить запрос.
+1. Отправить PUT-запрос на эндпоинт `https://cloud-api.yandex.net/v1/disk/resources` с параметром `path = test4` и заголовками: `Authorization: OAuth <token>`, (заголовок `Content-Type` намеренно отсутствует).
+2. Проверить HTTP-код ответа.
+3. Проверить JSON-схему ответа.
 
 ## Фактический результат
 Получен HTTP-код `201`. Папка успешно создана на диске.
@@ -21,7 +19,6 @@
 
 ## Окружение
 - ОС: Windows 11
-- Инструмент: Postman
 - API: Яндекс Диск REST API
 - Endpoint: `PUT https://cloud-api.yandex.net/v1/disk/resources`
 
